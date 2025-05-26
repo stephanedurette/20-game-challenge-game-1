@@ -24,3 +24,5 @@ Run into other cars to destroy them
 Running into trucks ends the game
 
 lots of polish, explosions, skids and trails
+
+add obstacles on the chunks, garbage cans, lampposts that can be knocked over by the player
