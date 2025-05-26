@@ -1,0 +1,26 @@
+Game 1: Flappy Bird Clone
+
+3D Endless Runner
+
+Car moves along a 6 lane highway, clicking reverses the cars direction (left and right), the car always moves forward.
+    The car takes time to decelerate and accelerate, causing a curve.
+    Polish the movement with trails and skid mark decals
+
+instead of pipes, sets of cars that occupy the lanes spawn ahead of the player that leave at least 1 lane free
+
+score increases for every car passed
+
+save score for the session in a web game or have a score board
+
+Packages:
+    - kenney car models? synty car models?
+    - FEEL
+
+----
+
+Car is on fire always
+
+Run into other cars to destroy them
+Running into trucks ends the game
+
+lots of polish, explosions, skids and trails
