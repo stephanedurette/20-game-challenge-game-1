@@ -26,3 +26,10 @@ Running into trucks ends the game
 lots of polish, explosions, skids and trails
 
 add obstacles on the chunks, garbage cans, lampposts that can be knocked over by the player
+
+
+NEXT
+- spawning system -> gameobject, position, action on spawn using event channels
+- spawn cars in waves
+- make trucks
+- collision logic
