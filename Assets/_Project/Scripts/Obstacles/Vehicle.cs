@@ -11,7 +11,7 @@ public class Vehicle : MonoBehaviour
 
     void Start()
     {
-        Initialize(0);
+        //Initialize(0);
     }
 
     public void Initialize(float moveSpeed)
