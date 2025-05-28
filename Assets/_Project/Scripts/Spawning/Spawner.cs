@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -46,6 +47,12 @@ public class Spawner : MonoBehaviour
         return pool;
     }
 
+    private IEnumerator ReturnToPool(GameObject g)
+    {
+        yield return new WaitUntil(() => !g.activeInHierarchy);
+        objectPools[g].Release(g);
+    }
+
     public void Spawn(SpawnSettings spawnSettings)
     {
         if (!objectPools.ContainsKey(spawnSettings.SpawnPrefab)) {
@@ -53,6 +60,7 @@ public class Spawner : MonoBehaviour
         }
 
         GameObject toSpawn = objectPools[spawnSettings.SpawnPrefab].Get();
+        StartCoroutine(ReturnToPool(toSpawn));
         toSpawn.transform.position = spawnSettings.SpawnPosition;
 
         if (spawnSettings.SpawnAction != null) {
