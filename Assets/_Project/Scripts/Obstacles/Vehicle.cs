@@ -5,19 +5,21 @@ public class Vehicle : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody rigidBody;
+    [SerializeField] private Collider viewCollider;
 
     [Header("Settings")]
     [SerializeField] private List<GameObject> models;
 
-    void Start()
-    {
-        //Initialize(0);
-    }
+    private bool enteredScreen;
+
+    bool OnScreen => GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(Camera.main), viewCollider.bounds);
 
     public void Initialize(float moveSpeed)
     {
         rigidBody.linearVelocity = transform.forward * moveSpeed;
+        //rigidBody.interpolation = RigidbodyInterpolation.Extrapolate;
         SetRandomModel();
+        enteredScreen = false;
     }
 
     private void SetRandomModel()
@@ -29,4 +31,17 @@ public class Vehicle : MonoBehaviour
             models[i].SetActive(i == randIndex);
         }
     }
+    
+    private void FixedUpdate()
+    {
+        if (OnScreen)
+        {
+            enteredScreen = true;
+        } else if (enteredScreen)
+        {
+            gameObject.SetActive(false);
+            //rigidBody.interpolation = RigidbodyInterpolation.None;
+        }
+    }
+    
 }

@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,7 +22,30 @@ public class CarSpawnManager : MonoBehaviour
 
     void Start()
     {
-        //SpawnCar();
+        StartCoroutine(SpawnCarCoroutine());
+    }
+
+    private IEnumerator SpawnCarCoroutine()
+    {
+        while (true)
+        {
+            float delay = UnityEngine.Random.Range(delayBetweenWaves * (1 - delayBetweenWavesVariance), delayBetweenWaves * (1 + delayBetweenWavesVariance));
+            yield return new WaitForSeconds(delay);
+            SpawnWave();
+        }
+    }
+
+    private void SpawnWave()
+    {
+        int numCars = UnityEngine.Random.Range(minCarsPerWave, maxCarsPerWave + 1);
+        List<Transform> shuffledTransforms = spawnTransforms.OrderBy(_ => Guid.NewGuid()).ToList();
+
+        for (int i = 0; i < numCars; i++)
+        {
+            float speed = UnityEngine.Random.Range(minCarSpeed, maxCarSpeed);
+            SpawnCar(speed, shuffledTransforms[i].position);
+        }
+
     }
 
     private void SpawnCar(float speed, Vector3 position)
@@ -29,5 +55,10 @@ public class CarSpawnManager : MonoBehaviour
             g.GetComponent<Vehicle>().Initialize(speed);
         });
         spawnEvent?.Invoke(settings);
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }
