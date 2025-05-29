@@ -546,10 +546,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  delayBetweenWaves: 2
+  delayBetweenWaves: 2.5
   delayBetweenWavesVariance: 0.5
-  minCarsPerWave: 4
-  maxCarsPerWave: 6
+  minCarsPerWave: 3
+  maxCarsPerWave: 5
   minCarSpeed: 4
   maxCarSpeed: 10
   minObstaclesPerWave: 1
