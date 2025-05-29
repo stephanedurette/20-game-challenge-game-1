@@ -8,18 +8,25 @@ using UnityEngine.Events;
 public class CarSpawnManager : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private List<Transform> spawnTransforms;
-    [SerializeField] private GameObject spawnPrefab;
+    [SerializeField] private List<Transform> carSpawnTransforms;
+    [SerializeField] private List<Transform> obstacleSpawnTransforms;
+    [SerializeField] private GameObject carSpawnPrefab;
+    [SerializeField] private GameObject obstacleSpawnPrefab;
     [SerializeField] private UnityEvent<SpawnSettings> spawnEvent;
 
     [Header("Spawn Settings")]
     [SerializeField] private float delayBetweenWaves;
     [SerializeField][Range(0, 1)] private float delayBetweenWavesVariance;
+
+    [Header("Car Spawn Settings")]
     [SerializeField] private int minCarsPerWave;
     [SerializeField] private int maxCarsPerWave;
     [SerializeField] private float minCarSpeed;
     [SerializeField] private float maxCarSpeed;
 
+    [Header("Obstacle Spawn Settings")]
+    [SerializeField] private int minObstaclesPerWave;
+    [SerializeField] private int maxObstaclesPerWave;
     void Start()
     {
         StartCoroutine(SpawnCarCoroutine());
@@ -31,28 +38,37 @@ public class CarSpawnManager : MonoBehaviour
         {
             float delay = UnityEngine.Random.Range(delayBetweenWaves * (1 - delayBetweenWavesVariance), delayBetweenWaves * (1 + delayBetweenWavesVariance));
             yield return new WaitForSeconds(delay);
-            SpawnWave();
+            SpawnWave(carSpawnTransforms, minCarsPerWave, maxCarsPerWave, SpawnCar);
+            SpawnWave(obstacleSpawnTransforms, minObstaclesPerWave, maxObstaclesPerWave, SpawnObstacle);
         }
     }
 
-    private void SpawnWave()
+    private void SpawnWave(List<Transform> transforms, int minAmount, int maxAmount, Action<Vector3> spawnAction)
     {
-        int numCars = UnityEngine.Random.Range(minCarsPerWave, maxCarsPerWave + 1);
-        List<Transform> shuffledTransforms = spawnTransforms.OrderBy(_ => Guid.NewGuid()).ToList();
+        int numSpawns = UnityEngine.Random.Range(minAmount, maxAmount + 1);
+        List<Transform> shuffledTransforms = transforms.OrderBy(_ => Guid.NewGuid()).ToList();
 
-        for (int i = 0; i < numCars; i++)
+        for (int i = 0; i < numSpawns; i++)
         {
-            float speed = UnityEngine.Random.Range(minCarSpeed, maxCarSpeed);
-            SpawnCar(speed, shuffledTransforms[i].position);
+            spawnAction(shuffledTransforms[i].position);
         }
 
     }
 
-    private void SpawnCar(float speed, Vector3 position)
+    private void SpawnObstacle(Vector3 position)
     {
-        SpawnSettings settings = new(spawnPrefab, position, (g) =>
+        SpawnSettings settings = new(obstacleSpawnPrefab, position, (g) =>
         {
-            g.GetComponent<Vehicle>().Initialize(speed, position);
+            g.GetComponent<Obstacle>().Initialize();
+        });
+        spawnEvent?.Invoke(settings);
+    }
+
+    private void SpawnCar(Vector3 position)
+    {
+        SpawnSettings settings = new(carSpawnPrefab, position, (g) =>
+        {
+            g.GetComponent<Vehicle>().Initialize(UnityEngine.Random.Range(minCarSpeed, maxCarSpeed), position);
         });
         spawnEvent?.Invoke(settings);
     }
