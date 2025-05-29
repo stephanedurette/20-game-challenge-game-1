@@ -11,7 +11,7 @@ public class FollowTransform : MonoBehaviour
 
     private void Awake()
     {
-        offset = target.position - transform.position;
+        offset = transform.position - target.position;
     }
 
     void LateUpdate()
