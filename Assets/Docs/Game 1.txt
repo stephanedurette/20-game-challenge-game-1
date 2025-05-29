@@ -33,3 +33,9 @@ NEXT
 - spawn cars in waves
 - make trucks
 - collision logic
+
+---
+
+no trucks
+
+day / night cycle to stop boredom
