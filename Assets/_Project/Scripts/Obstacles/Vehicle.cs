@@ -14,10 +14,10 @@ public class Vehicle : MonoBehaviour
 
     bool OnScreen => GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(Camera.main), viewCollider.bounds);
 
-    public void Initialize(float moveSpeed)
+    public void Initialize(float moveSpeed, Vector3 position)
     {
         rigidBody.linearVelocity = transform.forward * moveSpeed;
-        //rigidBody.interpolation = RigidbodyInterpolation.Extrapolate;
+        rigidBody.MovePosition(position);
         SetRandomModel();
         enteredScreen = false;
     }

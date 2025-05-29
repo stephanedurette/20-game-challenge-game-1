@@ -52,7 +52,7 @@ public class CarSpawnManager : MonoBehaviour
     {
         SpawnSettings settings = new(spawnPrefab, position, (g) =>
         {
-            g.GetComponent<Vehicle>().Initialize(speed);
+            g.GetComponent<Vehicle>().Initialize(speed, position);
         });
         spawnEvent?.Invoke(settings);
     }
