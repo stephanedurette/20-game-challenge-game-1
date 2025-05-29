@@ -17,7 +17,8 @@ public class Vehicle : MonoBehaviour
     public void Initialize(float moveSpeed, Vector3 position)
     {
         rigidBody.linearVelocity = transform.forward * moveSpeed;
-        rigidBody.MovePosition(position);
+
+        rigidBody.MovePosition(position); //extrapolate messes with the spawning position unless it's set by the rigidbody
         SetRandomModel();
         enteredScreen = false;
     }
