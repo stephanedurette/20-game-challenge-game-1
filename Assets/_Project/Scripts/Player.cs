@@ -37,4 +37,9 @@ public class Player : MonoBehaviour
             currentDirection *= -1;
         }
     }
+
+    public void OnCollide()
+    {
+        
+    }
 }

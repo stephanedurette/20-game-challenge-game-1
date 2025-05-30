@@ -1141,6 +1141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1389,6 +1393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1512,6 +1520,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1884,6 +1896,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2319,6 +2335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierRed (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2410,6 +2430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2471,6 +2495,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2719,6 +2747,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
       propertyPath: m_Name
       value: barrierRed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3121,6 +3153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3182,6 +3218,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3369,6 +3409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierRed (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3522,6 +3566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3583,6 +3631,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
       propertyPath: m_Name
       value: barrierRed (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3674,6 +3726,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3985,6 +4041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4047,6 +4107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4108,6 +4172,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4294,6 +4362,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4667,6 +4739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierRed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5006,6 +5082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5254,6 +5334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5315,6 +5399,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5563,6 +5651,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6122,6 +6214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6183,6 +6279,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
       propertyPath: m_Name
       value: barrierRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6274,6 +6374,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6523,6 +6627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierRed (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6675,6 +6783,10 @@ PrefabInstance:
     - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
       propertyPath: m_Name
       value: barrierWall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6986,6 +7098,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierWall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1843439101492009881, guid: 769f96b69deb585449b4e8dc24b259e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7295,6 +7411,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
       propertyPath: m_Name
       value: barrierRed (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 926d0d0b02b1e4d479c9eddde006a955, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
