@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float sidewaysAccel;
     [SerializeField] private float sidewaysMaxSpeed;
     [SerializeField][Range(0, 1)] private float driftTolerance;
-    [SerializeField][Range(0, 1)] private float driftTime;
+    [SerializeField]private float driftTime;
 
     [Header("References")]
     [SerializeField] private Rigidbody rigidBody;
@@ -37,6 +37,11 @@ public class Player : MonoBehaviour
         rigidBody.linearVelocity = Vector3.forward * forwardMoveSpeed;
     }
 
+    private void Update()
+    {
+        //driftTimer.Tick();
+    }
+
     private void FixedUpdate()
     {
         velocity = rigidBody.linearVelocity;
@@ -61,7 +66,7 @@ public class Player : MonoBehaviour
 
             if (Mathf.Abs(velocity.x) > sidewaysMaxSpeed * driftTolerance)
             {
-                driftTimer.Reset();
+                driftTimer.Start();
             }
             
         }
