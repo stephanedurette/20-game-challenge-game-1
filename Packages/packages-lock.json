@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.gitamend.improvedtimers": {
+      "version": "https://github.com/stephanedurette/Unity-Improved-Timers.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d951a3c184a741e3069d654adb0b42198ea35f3e"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.5",
       "depth": 0,
