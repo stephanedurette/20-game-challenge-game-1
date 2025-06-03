@@ -1158,8 +1158,9 @@ MonoBehaviour:
   forwardMoveSpeed: 16
   sidewaysAccel: 40
   sidewaysMaxSpeed: 20
-  driftTolerance: 0.9
-  driftTime: 1
+  driftTolerance: 0.8
+  driftTime: 0.4
+  driftDelayTime: 0.3
   rigidBody: {fileID: 1868200908599033479}
   rotatePivot: {fileID: 7831537008520218889}
   skidMarks:
