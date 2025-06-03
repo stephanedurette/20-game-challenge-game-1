@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [Header("References")]
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private Transform rotatePivot;
+    [SerializeField] private TrailRenderer[] skidMarks;
 
     [Header("Events")]
     [SerializeField] private UnityEvent OnDirectionChange;
@@ -40,6 +41,14 @@ public class Player : MonoBehaviour
     private void Update()
     {
         //driftTimer.Tick();
+    }
+
+    public void ToggleSkidMarks(bool on)
+    {
+        foreach(var skidMark in skidMarks)
+        {
+            skidMark.emitting = on;
+        }
     }
 
     private void FixedUpdate()
