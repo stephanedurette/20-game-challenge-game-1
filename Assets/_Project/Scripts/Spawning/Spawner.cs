@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -8,9 +7,12 @@ public class Spawner : MonoBehaviour
 {
     private Dictionary<GameObject, ObjectPool<GameObject>> objectPools;
 
+    private List<GameObject> currentlySpawnedObjects;
+
     private void Awake()
     {
         objectPools = new();
+        currentlySpawnedObjects = new();
     }
 
     private ObjectPool<GameObject> InitializePool(GameObject prefab)
@@ -33,11 +35,13 @@ public class Spawner : MonoBehaviour
         void OnTakeFromPool(GameObject p)
         {
             p.gameObject.SetActive(true);
+            currentlySpawnedObjects.Add(p);
         }
 
         void OnReturnedToPool(GameObject p)
         {
             p.gameObject.SetActive(false);
+            currentlySpawnedObjects.Remove(p);
         }
 
         void OnDestroyPoolObject(GameObject p)
@@ -48,6 +52,13 @@ public class Spawner : MonoBehaviour
         return pool;
     }
 
+    public void DespawnAllObjects()
+    {
+        foreach (GameObject g in currentlySpawnedObjects) { 
+            g.gameObject.SetActive(false);
+        }
+    }
+
     private IEnumerator ReturnToPool(GameObject instance, ObjectPool<GameObject> pool)
     {
         yield return new WaitUntil(() => !instance.activeInHierarchy);
@@ -56,7 +67,8 @@ public class Spawner : MonoBehaviour
 
     public void Spawn(SpawnSettings spawnSettings)
     {
-        if (!objectPools.ContainsKey(spawnSettings.SpawnPrefab)) {
+        if (!objectPools.ContainsKey(spawnSettings.SpawnPrefab))
+        {
             objectPools[spawnSettings.SpawnPrefab] = InitializePool(spawnSettings.SpawnPrefab);
         }
 
@@ -64,7 +76,8 @@ public class Spawner : MonoBehaviour
         StartCoroutine(ReturnToPool(toSpawn, objectPools[spawnSettings.SpawnPrefab]));
         toSpawn.transform.position = spawnSettings.SpawnPosition;
 
-        if (spawnSettings.SpawnAction != null) {
+        if (spawnSettings.SpawnAction != null)
+        {
             spawnSettings.SpawnAction(toSpawn);
         }
     }

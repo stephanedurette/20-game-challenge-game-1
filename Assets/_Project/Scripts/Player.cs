@@ -29,8 +29,12 @@ public class Player : MonoBehaviour
     private CountdownTimer driftTimer;
     private CountdownTimer driftDelayTimer;
 
+    private Vector3 startingPosition;
+
     private void Awake()
     {
+        startingPosition = transform.position;
+
         driftTimer = new CountdownTimer(driftTime);
         driftTimer.OnTimerStart += () => { OnDriftStart?.Invoke(); };
         driftTimer.OnTimerStop += () => { OnDriftStop?.Invoke(); };
@@ -41,7 +45,21 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        //rigidBody.linearVelocity = Vector3.forward * forwardMoveSpeed;
+        //ToggleSkidMarks(false);
+    }
+
+    public void ResetToStart()
+    {
+        transform.position = startingPosition;
+        transform.rotation = Quaternion.identity;
+        currentDirection = -1;
         rigidBody.linearVelocity = Vector3.forward * forwardMoveSpeed;
+        foreach(var s in skidMarks)
+        {
+            s.Clear();
+        }
+        gameObject.SetActive(true);
         ToggleSkidMarks(false);
     }
 
@@ -87,6 +105,7 @@ public class Player : MonoBehaviour
 
     public void OnCollide()
     {
+        gameObject.SetActive(false);
         OnCollided?.Invoke();
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-public class CarSpawnManager : MonoBehaviour
+public class ObstacleSpawnManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private List<Transform> carSpawnTransforms;
@@ -45,7 +45,16 @@ public class CarSpawnManager : MonoBehaviour
 
     void Start()
     {
+    }
+
+    public void StartSpawn()
+    {
         StartCoroutine(SpawnCarCoroutine());
+    }
+
+    public void StopSpawn()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator SpawnCarCoroutine()
