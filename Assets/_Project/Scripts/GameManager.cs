@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Spawner spawner;
     [SerializeField] private ObstacleSpawnManager obstacleSpawnManager;
     [SerializeField] private CinemachineCamera playerfollowCamera;
+    [SerializeField] private ScoreManager scoreManager;
 
     private Vector3 playerFollowCameraStartPosition;
 
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         Cleanup();
 
+        scoreManager.ResetScore();
         spawner.DespawnAllObjects();
         foreach (var chunk in chunks) chunk.ResetChunk();
         player.ResetToStart();
