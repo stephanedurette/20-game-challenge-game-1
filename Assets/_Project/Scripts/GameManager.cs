@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RoadChunk[] chunks;
     [SerializeField] private Spawner spawner;
     [SerializeField] private ObstacleSpawnManager obstacleSpawnManager;
+    [SerializeField] private CinemachineCamera playerfollowCamera;
+
+    private Vector3 playerFollowCameraStartPosition;
+
+    private void Awake()
+    {
+        playerFollowCameraStartPosition = playerfollowCamera.transform.position;
+    }
 
     public void Start()
     {
@@ -21,11 +30,18 @@ public class GameManager : MonoBehaviour
         spawner.DespawnAllObjects();
         foreach (var chunk in chunks) chunk.ResetChunk();
         player.ResetToStart();
+        TeleportCameraToStart();
         obstacleSpawnManager.StartSpawn();
     }
 
     private void Cleanup()
     {
         obstacleSpawnManager.StopSpawn();
+    }
+
+    private void TeleportCameraToStart()
+    {
+        playerfollowCamera.transform.position = playerFollowCameraStartPosition;
+        playerfollowCamera.PreviousStateIsValid = false;
     }
 }

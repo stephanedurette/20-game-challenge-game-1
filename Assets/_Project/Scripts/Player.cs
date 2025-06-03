@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
 
     private Vector3 startingPosition;
 
+    private bool driving;
+
     private void Awake()
     {
         startingPosition = transform.position;
@@ -52,7 +54,6 @@ public class Player : MonoBehaviour
     public void ResetToStart()
     {
         transform.position = startingPosition;
-        transform.rotation = Quaternion.identity;
         currentDirection = -1;
         rigidBody.linearVelocity = Vector3.forward * forwardMoveSpeed;
         foreach(var s in skidMarks)
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
         }
         gameObject.SetActive(true);
         ToggleSkidMarks(false);
+        driving = true;
     }
 
     public void ToggleSkidMarks(bool on)
@@ -73,6 +75,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!driving) return;
+
         velocity = rigidBody.linearVelocity;
 
         velocity.x = Mathf.Clamp(velocity.x + currentDirection * sidewaysAccel * Time.fixedDeltaTime, -sidewaysMaxSpeed, sidewaysMaxSpeed);
@@ -105,6 +109,7 @@ public class Player : MonoBehaviour
 
     public void OnCollide()
     {
+        driving = false;
         gameObject.SetActive(false);
         OnCollided?.Invoke();
     }
