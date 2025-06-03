@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class CarSpawnManager : MonoBehaviour
 {
@@ -27,6 +28,21 @@ public class CarSpawnManager : MonoBehaviour
     [Header("Obstacle Spawn Settings")]
     [SerializeField] private int minObstaclesPerWave;
     [SerializeField] private int maxObstaclesPerWave;
+
+    private SpawnSettings carSpawnSettings;
+    private SpawnSettings obstacleSpawnSettings;
+
+    private void Awake()
+    {
+        carSpawnSettings = new();
+        carSpawnSettings.SpawnPrefab = carSpawnPrefab;
+
+        obstacleSpawnSettings = new(obstacleSpawnPrefab, Vector3.zero, (g) =>
+        {
+            g.GetComponent<Obstacle>().Initialize();
+        });
+    }
+
     void Start()
     {
         StartCoroutine(SpawnCarCoroutine());
@@ -57,20 +73,15 @@ public class CarSpawnManager : MonoBehaviour
 
     private void SpawnObstacle(Vector3 position)
     {
-        SpawnSettings settings = new(obstacleSpawnPrefab, position, (g) =>
-        {
-            g.GetComponent<Obstacle>().Initialize();
-        });
-        spawnEvent?.Invoke(settings);
+        obstacleSpawnSettings.SpawnPosition = position;
+        spawnEvent?.Invoke(obstacleSpawnSettings);
     }
 
     private void SpawnCar(Vector3 position)
     {
-        SpawnSettings settings = new(carSpawnPrefab, position, (g) =>
-        {
-            g.GetComponent<Vehicle>().Initialize(UnityEngine.Random.Range(minCarSpeed, maxCarSpeed), position);
-        });
-        spawnEvent?.Invoke(settings);
+        carSpawnSettings.SpawnPosition = position;
+        carSpawnSettings.SpawnAction = (g) => { g.GetComponent<Vehicle>().Initialize(UnityEngine.Random.Range(minCarSpeed, maxCarSpeed), position); };
+        spawnEvent?.Invoke(carSpawnSettings);
     }
 
     private void OnDestroy()

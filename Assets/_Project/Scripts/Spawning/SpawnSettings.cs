@@ -7,6 +7,11 @@ public class SpawnSettings
     public Vector3 SpawnPosition;
     public Action<GameObject> SpawnAction;
 
+    public SpawnSettings()
+    {
+
+    }
+
     public SpawnSettings(GameObject SpawnPrefab, Vector3 SpawnPosition) { 
         this.SpawnPrefab = SpawnPrefab;
         this.SpawnPosition = SpawnPosition;

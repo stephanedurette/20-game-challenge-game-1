@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] private UnityEvent OnDirectionChange;
     [SerializeField] private UnityEvent OnDriftStart;
     [SerializeField] private UnityEvent OnDriftStop;
+    [SerializeField] private UnityEvent OnCollided;
 
     private int currentDirection = -1;
     private Vector3 velocity;
@@ -86,6 +87,6 @@ public class Player : MonoBehaviour
 
     public void OnCollide()
     {
-        
+        OnCollided?.Invoke();
     }
 }
