@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float sidewaysMaxSpeed;
     [SerializeField][Range(0, 1)] private float driftTolerance;
     [SerializeField]private float driftTime;
+    [SerializeField] private float driftDelayTime;
 
     [Header("References")]
     [SerializeField] private Rigidbody rigidBody;
@@ -25,22 +26,22 @@ public class Player : MonoBehaviour
     private int currentDirection = -1;
     private Vector3 velocity;
     private CountdownTimer driftTimer;
+    private CountdownTimer driftDelayTimer;
 
     private void Awake()
     {
         driftTimer = new CountdownTimer(driftTime);
         driftTimer.OnTimerStart += () => { OnDriftStart?.Invoke(); };
         driftTimer.OnTimerStop += () => { OnDriftStop?.Invoke(); };
+
+        driftDelayTimer = new CountdownTimer(driftDelayTime);
+        driftDelayTimer.OnTimerStop += () => driftTimer.Start();
     }
 
     private void Start()
     {
         rigidBody.linearVelocity = Vector3.forward * forwardMoveSpeed;
-    }
-
-    private void Update()
-    {
-        //driftTimer.Tick();
+        ToggleSkidMarks(false);
     }
 
     public void ToggleSkidMarks(bool on)
@@ -75,7 +76,7 @@ public class Player : MonoBehaviour
 
             if (Mathf.Abs(velocity.x) > sidewaysMaxSpeed * driftTolerance)
             {
-                driftTimer.Start();
+                driftDelayTimer.Start();
             }
             
         }
