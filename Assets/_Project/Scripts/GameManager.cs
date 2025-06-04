@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RoadChunk[] chunks;
     [SerializeField] private Spawner spawner;
     [SerializeField] private ObstacleSpawnManager obstacleSpawnManager;
-    [SerializeField] private CinemachineCamera playerfollowCamera;
+    [SerializeField] private Transform playerfollowCamera;
     [SerializeField] private ScoreManager scoreManager;
 
     private Vector3 playerFollowCameraStartPosition;
@@ -43,7 +43,6 @@ public class GameManager : MonoBehaviour
 
     private void TeleportCameraToStart()
     {
-        playerfollowCamera.transform.position = playerFollowCameraStartPosition;
-        playerfollowCamera.PreviousStateIsValid = false;
+        playerfollowCamera.position = playerFollowCameraStartPosition;
     }
 }
